@@ -6,18 +6,23 @@
 </p>
 
 <p>
-  <strong>Skills:</strong>
-  <%= @idea.skills %>
+  <strong>Skills required:</strong>
+  <%= @idea.skills_required %>
 </p>
 
 <p>
-  <strong>Overview:</strong>
-  <%= @idea.overview %>
+  <strong>Description:</strong>
+  <%= @idea.description %>
 </p>
 
 <p>
   <strong>Platform:</strong>
-  <%= @idea.platform_id %>
+  <%= @idea.platform %>
+</p>
+
+<p>
+  <strong>Help needed:</strong>
+  <%= @idea.help_needed %>
 </p>
 
 <%= link_to 'Edit', edit_idea_path(@idea) %> |

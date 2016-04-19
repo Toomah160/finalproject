@@ -1,4 +1,4 @@
 json.array!(@ideas) do |idea|
-  json.extract! idea, :id, :name, :skills, :overview, :platform_id
+  json.extract! idea, :id, :name, :skills_required, :description, :platform, :help_needed
   json.url idea_url(idea, format: :json)
 end
