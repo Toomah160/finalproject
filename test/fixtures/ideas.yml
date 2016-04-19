@@ -2,14 +2,12 @@
 
 one:
   name: MyString
+  skills: MyText
   overview: MyText
-  type_id: 1
-  user_id: 1
-  filled: false
+  platform_id: 1
 
 two:
   name: MyString
+  skills: MyText
   overview: MyText
-  type_id: 1
-  user_id: 1
-  filled: false
+  platform_id: 1

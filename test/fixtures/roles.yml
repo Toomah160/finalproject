@@ -2,6 +2,8 @@
 
 one:
   name: MyString
+  platform_id: 1
 
 two:
   name: MyString
+  platform_id: 1

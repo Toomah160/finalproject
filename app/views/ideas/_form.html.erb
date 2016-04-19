@@ -1,12 +1,11 @@
-<%= simple_form_for(@job) do |f| %>
+<%= simple_form_for(@idea) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.input :skills %>
     <%= f.input :overview %>
-    <%= f.input :type_id %>
-    <%= f.input :user_id %>
-    <%= f.input :filled %>
+    <%= f.input :platform_id %>
   </div>
 
   <div class="form-actions">

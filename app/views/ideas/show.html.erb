@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @idea.skills %>
+</p>
+
+<p>
+  <strong>Overview:</strong>
+  <%= @idea.overview %>
+</p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @idea.platform_id %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
