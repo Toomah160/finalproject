@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :ideas_users
   resources :ideas
   resources :platforms
   resources :roles
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  get 'ascending' => 'ideas#ascending'
   
 
 #resources :users do

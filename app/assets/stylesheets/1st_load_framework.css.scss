@@ -23,6 +23,10 @@
   }
 // create your own classes
 // to make views framework-neutral
+.center{
+  position: relative;
+    left: 30px;
+}
 .column {
   @include six-columns-centered;
   }

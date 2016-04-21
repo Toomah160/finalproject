@@ -68,6 +68,12 @@ class IdeasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
-      params.require(:idea).permit(:name, :skills_required, :description, :platform_id, :help_needed)
+      params.require(:idea).permit(:name, :skills_required, :description, :platform_id, :user_id, :help_needed)
+    
     end
+    
+    def ascending
+      @ideas= Idea.ascending
+    end
+
 end

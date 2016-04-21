@@ -6,7 +6,6 @@ class CreateIdeas < ActiveRecord::Migration
       t.text :description
       t.string :platform
       t.string :help_needed
-
       t.timestamps null: false
     end
   end

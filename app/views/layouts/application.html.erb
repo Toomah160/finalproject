@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Employment" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Employment" %>">
+    <meta name="decription" content="<%= content_for?(:description) ? yield(:description) : "Employment" %>">
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag 'vendor/modernizr' %>
@@ -13,7 +13,8 @@
   <body>
     <header>
       <%= render 'layouts/navigation' %>
-             <b><h2> Application Idea Management System </b></h2>
+      <%= image_tag 'Logo1.png' %><b><h1.center> Application Idea Management System </b></h1>
+             
 
     </header>
     <main role="main">
