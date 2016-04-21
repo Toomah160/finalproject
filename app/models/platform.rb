@@ -1,3 +1,3 @@
 class Platform < ActiveRecord::Base
-    belongs_to :idea
+    has_many :idea
 end
