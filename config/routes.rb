@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   
 
+#resources :users do
+ # get :make
+  #:make_admin, on:memeber 
+#end
+
 end

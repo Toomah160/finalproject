@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     belongs_to :role
     
     validates :name, presence: true, length: { maximum: 50 }
-    validates :admin ,default:false
+    #validates :admin ,default:false
     validates :password, presence: true, length: { minimum: 2 }
     
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
