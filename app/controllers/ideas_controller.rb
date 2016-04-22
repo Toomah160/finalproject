@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate, only: [:index, :open]
+ # skip_before_action :authenticate, only: [:index, :open]
 
   # GET /ideas
   # GET /ideas.json
@@ -69,11 +69,39 @@ class IdeasController < ApplicationController
       @ideas= Idea.ascending
    end
     
+    
+       def make_admin
+      @user.toggle!(:admin)
+      if @user.save
+        redirect_to users_path, notice: 'User was
+    successfully updated.'
+      else
+        flash[:alert]= 'Error updating user'
+        redirect_to users_path
+      end
+    end
+
+      def admin_only
+      if !current_user.admin?
+        redirect_to root_path
+      end
+    end 
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
       @idea = Idea.find(params[:id])
     end
+    
+    def set_user
+      @user = User.find(params[:id])
+      if @user == current_user || current_user.admin?
+        return @user
+      else
+        redirect_to root_path
+      end
+    end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
@@ -81,6 +109,6 @@ class IdeasController < ApplicationController
     
     end
     
-   
+  
 
 end
