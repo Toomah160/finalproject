@@ -5,6 +5,7 @@ class IdeasController < ApplicationController
   # GET /ideas.json
   def index
     @ideas = Idea.all
+    
   end
 
   # GET /ideas/1
@@ -60,6 +61,13 @@ class IdeasController < ApplicationController
     end
   end
 
+  def ascending
+      @ideas= Idea.ascending
+  end
+      def descending
+      @ideas= Idea.ascending
+  end
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
@@ -72,8 +80,6 @@ class IdeasController < ApplicationController
     
     end
     
-    def ascending
-      @ideas= Idea.ascending
-    end
+   
 
 end
