@@ -66,7 +66,7 @@ class IdeasController < ApplicationController
   end
       def descending
       @ideas= Idea.ascending
-  end
+   end
     
   private
     # Use callbacks to share common setup or constraints between actions.
