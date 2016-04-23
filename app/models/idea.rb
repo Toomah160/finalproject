@@ -1,7 +1,6 @@
 class Idea < ActiveRecord::Base
    
     belongs_to:platform
-    has_many :ideas_users
     has_many :users, through: :ideas_users
     has_many :ideas_users, through: :ideas_users
 
@@ -11,7 +10,7 @@ class Idea < ActiveRecord::Base
     scope :ascending, -> {order('name asc')}
     scope :descending, -> {order('name desc')}
 
-    scope :open, -> {where(filled: false)}
+  #  scope :open, -> {where(filled: false)}
 
     
 end
