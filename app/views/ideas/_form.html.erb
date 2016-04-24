@@ -4,10 +4,10 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :platform_id %>
+    <%= f.association :platform ,label_method: :name%> 
+
     <%= f.input :help_needed %>
-    <%= f.input :designer %>
-    <%= f.input :developer %>
+
   </div>
 
   <div class="form-actions">
