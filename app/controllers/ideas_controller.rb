@@ -106,17 +106,17 @@ class IdeasController < ApplicationController
      # Never trust parameters from the scary internet, only allow the white list through.
     def idea_params
       params.require(:idea).permit(:name, :description, :platform_id, :user_id, :help_needed, :designer, :developer)
-     end
+    end
      
      def join_developer
        if @user.logged_in?
         current_user.id = :developer
-      end
-    end
+       end
+     end
     
     def join_designer
        if @user.logged_in?
         current_user.id = :designer
-      end
+       end
     end
-  end
+end

@@ -7,8 +7,8 @@ class Idea < ActiveRecord::Base
     validates :name, :description, :help_needed, :platform_id, presence: true
    # validates :designer, :developer, default: 0
     # :ascending, -> { order(ideas.created_at ASC) }
-    scope :ascending, -> {order('name asc')}
-    scope :descending, -> {order('name desc')}
+    scope :ascending, -> {order('name ASC')}
+    scope :descending, -> {order('name DESC')}
 
     
 end
