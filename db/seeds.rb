@@ -5,9 +5,8 @@ Platform.delete_all
 
 
 h=Platform.create([{name: "IOS"}, {name: "Android"}, {name: "Web app"}, {name: "iphone"}])
-#Idea.create(name: "games", skills_required: "web_developer", description: "blaa", help_needed: "designer", user_id: "1", platform_id: h.id)
-Idea.create(name: "games", skills_required: "web_developer", description: "blaa", help_needed: "designer")
-Idea.create(name: "games", skills_required: "web_developer", description: "blaa", help_needed: "designer")
+#Idea.create(name: "games", description: "blaa", help_needed: "designer", designer:0 , developer:0,platform_id: h.id, user_id:2)
+Idea.create(name: "games", description: "blaa", help_needed: "designer", designer:0, developer:0)
 
 r = Role.create(name: "Employer")
 Role.create(name: "Job Seeker")

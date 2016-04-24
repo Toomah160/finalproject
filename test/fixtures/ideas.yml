@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  skills_required: MyText
-  description: MyText
-  platform: MyString
-  help_needed: MyString
+ name: games
+ description: blaa
+ platform: IOS
+ help_needed: designer
+ developer: 0
+ designer: 0
 
 two:
-  name: MyString
-  skills_required: MyText
-  description: MyText
-  platform: MyString
-  help_needed: MyString
+ name: calender
+ description: blaa
+ platform: IOS
+ help_needed: designer
+ developer: 0
+ designer: 0

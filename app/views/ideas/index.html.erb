@@ -5,14 +5,16 @@
 <h6> <b><%= link_to 'Sort: Ascending', ascending_path %></b> </h6> 
 <h6> <b><%= link_to 'Sort: Descending', descending_path %></b> </h6>
 
+
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Skills required</th>
       <th>Description</th>
       <th>Platform</th>
       <th>Help needed</th>
+      <th>Developer</th>
+      <th>Designer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,10 +22,24 @@
     <% @ideas.each do |idea| %>
       <tr>
         <td><%= idea.name %></td>
-        <td><%= idea.skills_required %></td>
         <td><%= idea.description %></td>
         <td><%= idea.platform_id %></td>
         <td><%= idea.help_needed %></td>
+
+       <td><%= idea.developer %></td> 
+       <% if idea.developer==0 %>
+           <li> <%= link_to 'join_developer',Free %></li>
+           <%else%>
+           return @user
+        <%end%>
+        
+        <td><%= idea.designer %></td>
+        <% if idea.designer==0 %>
+           <li> <%= link_to 'join_designer',Free %></li>
+           <%else%>
+           return @user
+        <%end%>
+        
         <td><%= link_to 'Toggle Admin',
 make_admin_user_path(user) %></td>
         <td><%= link_to 'Show', idea %></td>

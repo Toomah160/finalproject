@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  email: MyString
-  password: MyString
+  name: tartan
+  email: tartan@cmu.edu
+  password: foobar
   role_id: 1
-  admin: false
+  admin: true
 
 two:
-  name: MyString
-  email: MyString
-  password: MyString
-  role_id: 1
+  name: fatima
+  email: fatima@cmu.edu
+  password: 123
+  role_id: 2
   admin: false

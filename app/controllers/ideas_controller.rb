@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: [:show, :edit, :update, :destroy]
- # skip_before_action :authenticate, only: [:index, :open]
+  skip_before_action :authenticate, only: [:index, :open]
 
   # GET /ideas
   # GET /ideas.json
@@ -27,6 +27,7 @@ class IdeasController < ApplicationController
   # POST /ideas.json
   def create
     @idea = Idea.new(idea_params)
+     #@idea = Idea.new(current_user.id)
     respond_to do |format|
       if @idea.save
         format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
@@ -42,7 +43,7 @@ class IdeasController < ApplicationController
   # PATCH/PUT /ideas/1.json
   def update
     respond_to do |format|
-      if @idea.update(idea_params)
+      if @idea.update(current_user.id)
         format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
         format.json { render :show, status: :ok, location: @idea }
       else
@@ -68,9 +69,7 @@ class IdeasController < ApplicationController
       def descending
       @ideas= Idea.ascending
    end
-    
-    
-       def make_admin
+      def make_admin
       @user.toggle!(:admin)
       if @user.save
         redirect_to users_path, notice: 'User was
@@ -88,11 +87,7 @@ class IdeasController < ApplicationController
     end 
     
     
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def idea_params
-      params.require(:idea).permit(:name, :skills_required, :description, :platform_id, :user_id, :help_needed)
-    end
-    
+   
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
@@ -107,6 +102,21 @@ class IdeasController < ApplicationController
         redirect_to root_path
       end
     end
-
+    
+     # Never trust parameters from the scary internet, only allow the white list through.
+    def idea_params
+      params.require(:idea).permit(:name, :description, :platform_id, :user_id, :help_needed, :designer, :developer)
+     end
+     
+     def join_developer
+       if @user.logged_in?
+        current_user.id = :developer
+      end
+    end
+    
+    def join_designer
+       if @user.logged_in?
+        current_user.id = :designer
+      end
+    end
   end
-  

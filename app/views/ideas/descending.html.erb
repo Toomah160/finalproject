@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Listing Ideas</h2>
-
-<h6> <b><%= link_to 'Sort: Ascending', ascending_path %></b> </h6> 
+<h6> <b><%= link_to 'Sort: Descending', descending_path %></b> </h6>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Skills required</th>
       <th>Description</th>
       <th>Platform</th>
       <th>Help needed</th>
+       <th>Designer</th>
+        <th>Developer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,10 +20,11 @@
     <% @ideas.each do |idea| %>
       <tr>
         <td><%= idea.name %></td>
-        <td><%= idea.skills_required %></td>
         <td><%= idea.description %></td>
         <td><%= idea.platform_id %></td>
         <td><%= idea.help_needed %></td>
+        <td><%= idea.designer %></td>
+        <td><%= idea.developer %></td>
         <td><%= link_to 'Show', idea %></td>
         <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
         <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>

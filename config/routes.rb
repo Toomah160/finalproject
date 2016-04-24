@@ -12,13 +12,8 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
+ # get 'ideas_users/:id'=>'ideas_users#show'
   delete 'logout' => 'sessions#destroy'
  
-  
-
-#resources :users do
- # get :make
-  #:make_admin, on:memeber 
-#end
 
 end

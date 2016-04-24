@@ -16,28 +16,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { admin: @user.admin, email: @user.email, name: @user.name, password: @user.password, role_id: @user.role_id }
-    end
-
-    assert_redirected_to user_path(assigns(:user))
-  end
-
-  test "should show user" do
-    get :show, id: @user
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @user
-    assert_response :success
-  end
-
-  test "should update user" do
-    patch :update, id: @user, user: { admin: @user.admin, email: @user.email, name: @user.name, password: @user.password, role_id: @user.role_id }
-    assert_redirected_to user_path(assigns(:user))
-  end
 
   test "should destroy user" do
     assert_difference('User.count', -1) do
